@@ -19,3 +19,13 @@ addForm.addEventListener('submit', e => {
     addForm.reset(); // Clear the input field after submitting
   }
 });
+
+// delete todos
+
+
+
+todoList.addEventListener('click', e => {
+  if (e.target.classList.contains('delete')) {
+    e.target.parentElement.remove();
+  }
+});
