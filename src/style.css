@@ -9,8 +9,12 @@
 
 body{
   font-family: 'Fredoka One', cursive;
-  background-image: linear-gradient(to right, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
-  color:#8B4513;
+  background:#F0F0F0 ;
+}
+
+h1{
+color: #333;
+
 }
 
 .container{
