@@ -1,43 +1,21 @@
-document.querySelector("#input").addEventListener("keydown", (event) => {
-    if(event.key === "Enter"){
-      const input = document.querySelector("#input");
-      addItem(input.value);
-    }
-      
-  });
-  
-  document.querySelector("#add_item").addEventListener("click", () => {
-    const input = document.querySelector("#input");
-    addItem(input.value);
-  });
-  
-  addItem = (input) => {
-    const item = document.createElement("div");
-    const div = document.createElement("div");
-    const checkIcon = document.createElement("i");
-    const trashIcon = document.createElement("i");
-    const text = document.createElement("p");
-  
-    item.className = "item";
-    text.textContent = input;
-  
-    checkIcon.className = "fas fa-check-square";
-    checkIcon.style.color = "lightgray";
-    checkIcon.addEventListener("click", () => {
-      checkIcon.style.color = "limegreen";
-    })
-    div.appendChild(checkIcon);
-  
-    trashIcon.className = "fas fa-trash";
-    trashIcon.style.color = "darkgray";
-    trashIcon.addEventListener("click", () => {
-      item.remove();
-    })
-    div.appendChild(trashIcon);
-  
-    item.appendChild(text);
-    item.appendChild(div);
-  
-    document.querySelector("#to_do_list").appendChild(item);
-    document.querySelector("#input").value = "";
+const addForm = document.querySelector('.add');
+const todoList = document.querySelector('.todos');
+
+const generateTemplate = todo => {
+  const html = `
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span>${todo}</span>
+      <i class="far fa-trash-alt delete"></i>
+    </li>
+  `;
+  todoList.innerHTML += html;
+};
+
+addForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const todo = addForm.add.value.trim();
+  if (todo.length) {
+    generateTemplate(todo);
+    addForm.reset(); // Clear the input field after submitting
   }
+});
