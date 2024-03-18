@@ -24,6 +24,15 @@ input[type=text]:focus{
   cursor: pointer;
 }
 
+
+.filtered{
+
+  display: none !important;
+
+
+
+}
+
 footer{
   color: #fff;
 }
