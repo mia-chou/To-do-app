@@ -9,7 +9,7 @@ const generateTemplate = todo => {
       <i class="far fa-trash-alt delete"></i>
     </li>
   `;
-  todoList.innerHTML += html;
+  list.innerHTML += html; // Use 'list' instead of 'todoList'
 };
 
 addForm.addEventListener('submit', e => {
@@ -22,10 +22,7 @@ addForm.addEventListener('submit', e => {
 });
 
 // delete todos
-
-
-
-todoList.addEventListener('click', e => {
+list.addEventListener('click', e => { // Change 'todoList' to 'list'
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
   }
